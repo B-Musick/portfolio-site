@@ -1,0 +1,555 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(213, 212, 212);
+
+}
+
+#landing-page-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+#top-half-landing{
+    width: 120%;
+    left: -100px;
+    top: -130px;
+    height: 450px;
+    background: rgb(72, 72, 66);
+ 
+    position: absolute;
+    transform: rotate(-10deg);
+    transition: transform 1s linear 1s, 
+            width 1s linear 1s,
+            height 1s linear 1s,
+            top 1s linear 1s,
+            left 1s linear 1s;
+}
+
+#bottom-half-landing{
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    top: 56%;
+    font-weight: 300;
+
+}
+
+#name-label{
+    position: absolute;
+    bottom: -3.8vw;
+    left:17%;
+    color: rgb(72, 72, 66);
+    font-size: 4vw;
+    
+    /* transform: skew(10deg, 1vw); */
+    width: 30%;
+    transition: left 1s;
+    z-index: 1;
+    transition: left 1s;
+
+}
+.name-label-hidden{
+    /* Hide name label when click on one of the tabs */
+    left: -300% !important;
+    
+    z-index: 1;
+    transition: left 1s;
+}
+
+.right-header-half{
+    /* Whichever label is clicked, style the right grey */
+    color: rgb(72, 72, 66);
+    z-index: 1;
+}
+
+#position-label{
+    position: absolute;
+    
+    bottom: -1vw;
+    left:45%;
+    color: rgb(213, 212, 212);
+    font-size: 4vw;
+   
+    /* transform: skew(10deg, 1vw); */
+    width: 50%;
+    transition: left 1s;
+
+}
+.position-label-hidden{
+    left: 400% !important;
+    transition: left 1s;
+
+    
+    
+
+}
+/* INFORMATION TABS */
+.info-rect{
+    height: 1px;
+    background: rgb(72, 72, 66);
+    position: absolute;
+}
+.info-label{
+    color: rgb(72, 72, 66);;
+    position: absolute;
+    font-size: 25px;
+}
+.info-label:hover{
+    font-size: 30px;
+}
+.rect-folded{
+    width: 1% !important;
+    transition: width 1s;
+}
+.label-folded{
+    right: 2% !important;
+    transition: right 1s;
+}
+/* When click the label, shrink the font */
+.label-smaller{
+    font-size: 15px;
+    transition: font-size 1s;
+}
+.rect-hidden{
+    /* Add this to the label rectangle that was clicked */
+    width:0 !important;
+    transition: width 1s;
+    background-color:rgb(72, 72, 66);
+}
+.label-hidden{
+    /* First hide the label to the right */
+    transition: right 1s linear 1s;
+    right: -300px !important;
+}
+
+/* Hide the headers then transition them in when clicked */
+.hidden-header{
+    color: white;
+    font-size: 25px;
+    position: fixed;
+    top: 15px;
+    left: -200px;
+    /* Delay transition 2s */
+    transition: left 1s linear 0.1s;
+}
+.label-header{
+    color: white;
+    position: absolute;
+    /* Once label hidden delay it to transition from left*/
+    left: 18px !important;
+    top: 20px;
+    transition: left 1s;
+    z-index: 1;
+    
+
+}
+ /* Change the page background */
+
+.top-half-landing-folded{
+    height: 65px !important;
+    width: 65px !important;
+    transform: rotate(0deg) !important;
+    top: 0 !important;
+    left: 0 !important;
+    transition: transform 1s linear 1s, 
+            width 1s linear 1s,
+            height 1s linear 1s,
+            top 1s linear 1s,
+            left 1s linear 1s;
+}
+
+#about-rect{
+    width: 10%;
+    top: 0;
+    right: 0px;
+    transition: width 1s;
+}
+#about-label{
+    top: -4%;
+    right: 11%;
+    transition: right 1s, font-size 1s;
+
+}
+#courses-rect{
+    width: 12%;
+    top: 12%;
+    right: 0px;
+    transition: width 1s;
+}
+#courses-label{
+    top: 8%;
+    right: 13%;
+    transition: right 1s,font-size 1s;
+
+}
+#tech-rect{
+    width: 14%;
+    top: 24%;
+    right: 0px;
+    transition: width 1s;
+}
+#tech-label{
+    top: 20%;
+    right: 15%;
+    transition: right 1s,font-size 1s;
+
+}
+#learning-rect{
+    width: 22%;
+    top: 36%;
+    right: 0px;
+    transition: width 1s;
+}
+#learning-label{
+    top:32%;
+    right: 23%;
+    transition: right 1s,font-size 1s;
+
+}
+#projects-rect{
+    width: 24%;
+    top: 48%;
+    right: 0px;
+    transition: width 1s;
+}
+#projects-label{
+    top: 44%;
+    right: 25%;
+    transition: right 1s,font-size 1s;
+}
+/************************* DIFFERENT TOPIC CONTAINERS *************************/
+.description-body-hidden{
+    position: absolute;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    left: -200%;
+    width: 80%;
+    transition: left 1s linear;
+    font-size: 13px;
+    height: 600px;
+    overflow: hidden;
+    
+
+
+}
+.description-body-shown{
+    
+    left: 0% !important;
+    /* Delay transition so current description removed */
+    transition: left 1s linear 2.5s;
+    height: 100%;
+    font-size: 13px;
+    overflow: scroll;
+    margin-top: 65px;
+    
+
+}
+.description-body-shown p, .description-body-hidden p{
+    padding-right: 5%;
+}
+
+#footer{
+    width: 100%;
+    height: 40px;
+    top: 90%;
+    position: fixed;
+    z-index: 1;
+    background-color:  rgb(213, 212, 212);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2vh;
+    
+}
+.social-media-icon-container{
+    
+    font-size: 4vh !important;
+    color: rgb(72, 72, 66);
+    
+}
+
+.footer-item{
+    text-decoration: none;
+    color:rgb(72, 72, 66);
+    padding: 15px;
+    /* font-size: 15px; */
+    
+}
+.social-media-icon-container i{
+    color: rgb(72, 72, 66);
+    padding:10px;
+    
+
+}
+
+.icon-column{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+   
+    width: 90%;
+    margin-right: 5%;
+    padding-top: 5%;
+    
+}
+.icon-column fab{
+    padding: 0 1%;
+}
+#about-description-container a{
+    
+    color: black;
+
+}
+#courses-description-container a{
+   
+    color: black;
+
+}
+#learning-description-container a{
+    
+    color: black;
+
+
+}
+
+.project a {
+    width: 100%; 
+    height: 100%;
+}
+
+/***************** PHONE SCREEN *******************/
+
+@media(max-width:480px){
+    .info-label{
+        color: rgb(72, 72, 66);;
+        position: absolute;
+        font-size: 12px;
+    }
+
+    #about-rect{
+        width: 10%;
+        top: 10%;
+        right: 0px;
+        transition: width 1s;
+    }
+    #about-label{
+        top: 8%;
+        right: 11%;
+        transition: right 1s, font-size 1s;
+
+    }
+    #courses-rect{
+        width: 12%;
+        top: 18%;
+        right: 0px;
+        transition: width 1s;
+    }
+    #courses-label{
+        top: 16%;
+        right: 13%;
+        transition: right 1s,font-size 1s;
+
+    }
+    #tech-rect{
+        width: 14%;
+        top: 26%;
+        right: 0px;
+        transition: width 1s;
+    }
+    #tech-label{
+        top: 24%;
+        right: 15%;
+        transition: right 1s,font-size 1s;
+
+    }
+    #learning-rect{
+        width: 22%;
+        top: 34%;
+        right: 0px;
+        transition: width 1s;
+    }
+    #learning-label{
+        top:32%;
+        right: 23%;
+        transition: right 1s,font-size 1s;
+
+    }
+    #projects-rect{
+        width: 24%;
+        top: 42%;
+        right: 0px;
+        transition: width 1s;
+    }
+    #projects-label{
+        top: 40%;
+        right: 25%;
+        transition: right 1s,font-size 1s;
+    }
+
+
+    /***** Footer Social Media Icons *****/
+    #footer{
+        font-size: 1.5vh;
+    }
+    .social-media-icon-container{
+        font-size: 3vh !important;
+    }
+    .footer-item{
+        text-decoration: none;
+        color:rgb(72, 72, 66);
+        padding: 10px;
+        /* font-size: 15px; */
+    
+    }
+
+}
+
+
+/* PROJECTS PAGE */
+#projects-description-container{
+    width: 550px;
+    margin-left: 10%;
+    overflow: scroll;
+    padding-bottom: 50px;
+}
+
+.project{
+    width: 500px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 150px 300px 100px;
+}
+
+.project-image{
+    width: 130px;
+    height:100px;
+}
+.project-image-container{
+    width: 100%;
+    height: 100%;
+    grid: 1/2;
+}
+.project a{
+        all: unset !important;
+    text-decoration: none !important;
+    color: rgb(72,72,66);
+}
+.project-header{
+    font-weight: 700;
+    font-size: 23px;
+}
+.project-text{
+
+    color: rgb(72,72,66);
+    grid: 2/3;
+    width: 300px;
+}
+.project-title{
+    font-weight: 700;
+    font-size: 15px;
+}
+.project-git-link{
+    grid: 3/4;
+    height: 100%;
+    width: 50px;
+    
+}
+.git-project-icon{
+    margin-top: 45px;
+    margin-left: 40px;
+    font-size: 25px;
+    
+}
+
+.anchor-title{
+    padding: 5px;
+    background-color: rgb(72,72,66);
+    width: 70px;
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+}
+
+@media(max-width:480px){
+    /****** Project section when viewed from phone **********/
+    #projects-description-container{
+        width: 80%;
+        margin-left: 10%;
+        overflow: scroll;
+        padding-bottom: 50px;
+    }
+    .project-header{
+        font-weight: 700;
+        font-size: 23px;
+    }
+    .project{
+        width: 80%;
+        
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .project-image{
+        width: 100%;
+        height:200px;
+    }
+    .project-image-container{
+        width: 100%;
+        height: 200px;
+        
+        
+    }
+    .project-links{
+        margin: 0 auto;
+    }
+    .project a{
+        all: unset !important;
+        text-decoration: none !important;
+        color: rgb(72,72,66);
+        
+    }
+
+
+    .project-title{
+        font-weight: 700;
+        font-size: 15px;
+        
+    }
+    .project-git-link{
+        height: 100%;
+        width: 50px;
+        margin-bottom: 5px;
+        
+    }
+    .git-project-icon{
+        margin-top: 45px;
+        margin-left: 40px;
+        font-size: 25px;    
+    }
+    .project-text{
+        margin-top: 20px;
+        color: rgb(72,72,66);
+        width: 100%;
+    }
+
+
+    .anchor-title{
+        padding: 5px;
+        background-color: rgb(72,72,66);
+        width: 70px;
+        color: white;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+
+}
